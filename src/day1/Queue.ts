@@ -42,6 +42,9 @@ export default class Queue<T> {
 
         const curHead = this.head!;
 
+        // Not necessary to deallocate but fug it
+        curHead.next = undefined;
+
         this.head = curHead.next;
         this.length--;
 
